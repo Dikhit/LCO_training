@@ -24,11 +24,12 @@ class my_file_database(object):
             single_user_details_list = data.split('\n\n\n')
             for items in single_user_details_list[:-1]:
                 single_users = items.split('\n')
-                print(len(single_users))
-                for i in range(0,len(single_users) - 1):
-                    final_user_list.append([
-                        single_users[i]
-                    ])
+                final_user_list.append([
+                    single_users[0],
+                    single_users[1],
+                    single_users[2]
+
+                ])
         return final_user_list
 
     def update_data(self,email="example@emaple.com"):
@@ -92,35 +93,14 @@ class my_file_database(object):
             all_users = self.read_data()
             return all_users[serial_num - 1]
     
-    def delete_user(self,email):
-        with open(self.database, 'r+') as f:
-            d = f.readlines()
-            f.seek(0)
-            for i in d:
-                if i != email:
-                    f.write(i)
-            f.truncate()         
-
-    def delete_one_information(self,email):
-        with open(self.database,'r') as file:
-            all_users = file.read()
-            for items in all_users:
-                if items[1] == email:
-                    print("\n\nyour name is : ", items[0])
-                    print("your email is : ", items[1])
-                    print("your password is : ", items[2])
-                    
-                    name = items[0]
-                    email = items[1]
-                    password = items[2]
-
-                    with open(self.database,'r') as file:
-                        filedata = file.read()
-                    filedata = filedata.replace(name,'\t')
-                    filedata = filedata.replace(email,'\t')
-                    filedata = filedata.replace(password,'\t')
-                    with open(self.database,'w') as file:
-                        file.write(filedata)
-                    print("your name is successfully changed")
-                else:
-                    return "Wrong Input"
+    def delete_user(self,id):
+        all_users = self.read_data()
+        print(all_users)
+        del all_users[int(id) - 1]
+        print(all_users)
+        final_database = ""
+        for items in all_users:
+            temp_single_user = "\n".join(elements for elements in items)
+            print("new record")
+            final_database = "\n\n".join()
+            print(temp_single_user)

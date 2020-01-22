@@ -20,7 +20,7 @@ def main():
     elif input_choice == "2":
         all_users = db.read_data()
         for index,items in enumerate(all_users):
-            print("User Number : ", index + 1)
+            print("\nUser Number : ", index + 1)
             print("User name : ",items[0])
             print("User Email : ",items[1])
             print('\n')
@@ -48,9 +48,8 @@ def main():
         print("password is :", data[2])
 
     elif input_choice == "5":
-        email = input("Enter your mail to find your account : ")
-        email = email + '\n'
-        db.delete_user(email)
+        id = input("Enter your ID : ")
+        db.delete_user(id)
 
 if __name__ == "__main__":
     main()
