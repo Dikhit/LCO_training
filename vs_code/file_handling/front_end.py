@@ -4,7 +4,7 @@ from back_end import my_file_database
 def main():
     db = my_file_database()
 
-    print("1. Insert Data \n2. View Data \n3. Update User data \n4. Search Data")
+    print("1. Insert Data \n2. View Data \n3. Update User data \n4. Search Data \n5. Delete My Account")
     input_choice = input("\n\nEnter your choice : ")
 
     if input_choice == "1":
@@ -29,7 +29,7 @@ def main():
         email = input("\nEnter your email : ")
         data = db.update_data(email)
 
-        if not data == False:
+        if not data == "Wrong Input":
             for index,items in enumerate(data):
                 if items[1] == email:
                     print("\n\nUser Number : ", index + 1)
@@ -37,14 +37,20 @@ def main():
                     print("User Email : ",items[1])
                     print("User password : ", items[2])
                     print('\n')
+        else:
+            print(data)
 
     elif input_choice == "4":
         sl = input("\nEnter the serial number : ")
         data = db.search_user(int(sl))
-        print("Hey ",data[0])
+        print("\n\nHey ",data[0])
         print("your email is : ", data[1])
         print("password is :", data[2])
-    elif input_choice == "4":
-        pass
+
+    elif input_choice == "5":
+        email = input("Enter your mail to find your account : ")
+        email = email + '\n'
+        db.delete_user(email)
+
 if __name__ == "__main__":
     main()
