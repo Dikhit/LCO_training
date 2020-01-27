@@ -6,7 +6,7 @@ import pprint
 final_string = ""
 counter = 0
 r = rq.get("https://en.wikipedia.org/wiki/List_of_cities_in_India_by_population")
-bs=BeautifulSoup(r.text, "html.parser")
+bs=bs4.BeautifulSoup(r.text, "html.parser")
 table_body=bs.find('tbody')
 rows = table_body.find_all('tr')
 for row in rows:
