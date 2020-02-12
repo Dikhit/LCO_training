@@ -31,9 +31,9 @@ def wish_me():
         wish = "Good Night Katlic.." 
 
 # Introduction Jarvis
-wish_me()
-speak_assistance(wish)
-speak_assistance("How can I help you ?")
+# wish_me()
+# speak_assistance(wish)
+# speak_assistance("How can I help you ?")
 
 
 # main program starts from here
@@ -52,4 +52,4 @@ def take_command():
             speak_assistance("Say that again please")
 
 
-speak_assistance("sudur bhaiiii kela")
+speak_assistance("sudur bhai Ahhh ahhh ahhh")
