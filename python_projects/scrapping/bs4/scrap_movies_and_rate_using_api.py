@@ -1,5 +1,7 @@
 import requests as rq
 from bs4 import BeautifulSoup
+import pandas as pd
+
 
 temp_data=[]
 res = rq.get("https://en.wikipedia.org/wiki/List_of_Marvel_Cinematic_Universe_films")                                                  
@@ -12,10 +14,20 @@ with open("marvel.txt","w+") as file:
              temp_data.append(data[0])
 
 
+movies = []
+rating = []
 for items in temp_data[1:]:
     omid_api = rq.get("http://www.omdbapi.com/?i=tt3896198&apikey=7815f87e&t="+items)
     json = omid_api.json()
     try:
         print(items, json['imdbRating'])
+        movies.append(items)
+        rating.append(json['imdbRating'])
     except:
         print(items,"has no rating")
+
+
+df = pd.DataFrame({'movies' : movies, 'rating' : rating})
+print(df)
+
+

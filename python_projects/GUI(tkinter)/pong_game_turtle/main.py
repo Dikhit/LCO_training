@@ -42,8 +42,8 @@ ball.shape("circle")
 ball.color("white")
 ball.penup()
 ball.goto(0,0)
-ball.dx = 0.09
-ball.dy = 0.09
+ball.dx = 0.1
+ball.dy = 0.1
 
 # Functions
 def paddle_A_up():

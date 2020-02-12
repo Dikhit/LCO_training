@@ -1,5 +1,6 @@
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
+import pandas as pd
 executable_path = "C:\\Users\\Katlic\\Downloads\\web_drivers_chrome\\chromedriver.exe"
 
 
@@ -22,8 +23,15 @@ for i in range(2,10):
         prices.append(price)
     except:
         print("not found")
-        
+ 
+
+n = []
+p = []
+
 for i in range(8):
-    print(tours[i].text)
-    print(prices[i].text)
-    print('\n\n')
+    n.append(tours[i].text)
+    p.append(prices[i].text)
+
+    
+df = pd.DataFrame({'tours' : n, 'Price' : p})
+print(df)

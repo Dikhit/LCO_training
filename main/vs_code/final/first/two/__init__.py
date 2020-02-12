@@ -1,0 +1,1 @@
+from .inside_file import *
