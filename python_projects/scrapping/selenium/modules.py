@@ -9,7 +9,9 @@ import numpy as np
 import pyautogui
 import time
 import pickle
-
+import pandas as pd
+from sklearn.linear_model import LinearRegression
+import matplotlib.pyplot as plt
 
 
 executable_path = "C:\\Users\\Katlic\\Downloads\\web_drivers_chrome\\chromedriver.exe"
