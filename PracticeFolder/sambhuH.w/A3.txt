@@ -1,9 +1,0 @@
-1) Scrape the Amazon Website for all smartphones for the prices that user will provide and write it in a text file.
-
-2) Scrape the links from Pexels for coding images.
-
-3) Scrape the current bitcoin price and store it in a text file in a interval of 30 sec for 15min.
-
-4) Use selenium to scrape Zomato website for resturant data.
-
-5) Scrape spotify for Featured songs and artist name, then write it in a text file.

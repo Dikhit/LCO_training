@@ -52,4 +52,4 @@ def take_command():
             speak_assistance("Say that again please")
 
 
-speak_assistance("sudur bhai Ahhh ahhh ahhh")
+take_command()
