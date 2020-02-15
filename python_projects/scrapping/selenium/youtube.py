@@ -18,7 +18,9 @@ try :
     sign_in_button.click()
     time.sleep(3)
     email_address = driver.find_element_by_xpath('//*[@id="identifierId"]')
-    email_address.send_keys("dikhitbhuyan@gmail.com")
+    email_address.send_keys("kmonimahanta@gmail.com")
+    password = driver.find_element_by_xpath('//*[@id="password"]/div[1]/div/div[1]/input')
+    password.send_keys('kashmiri@123')
     next_button = driver.find_element_by_class_name('CwaK9').click()
 except:
     print("input field not found")
