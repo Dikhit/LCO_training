@@ -12,6 +12,7 @@ import pickle
 import pandas as pd
 from sklearn.linear_model import LinearRegression
 import matplotlib.pyplot as plt
+from sklearn.model_selection import train_test_split
 
 
 executable_path = "C:\\Users\\Katlic\\Downloads\\web_drivers_chrome\\chromedriver.exe"
